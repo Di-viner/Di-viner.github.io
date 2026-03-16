@@ -140,4 +140,20 @@ $(document).ready(function () {
     preventDefault: false,
   });
 
+  // Highlight active nav item on scroll
+  $(window).on('scroll', function() {
+    var scrollPos = $(document).scrollTop();
+    var offset = scssMastheadHeight + 20;
+
+    $('.masthead__menu-item a').each(function() {
+      var currLink = $(this);
+      var refElement = $(currLink.attr("href").replace(/.*#/, '#'));
+      
+      if (refElement.length && refElement.position().top - offset <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+        $('.masthead__menu-item').removeClass("selected");
+        currLink.parent().addClass("selected");
+      }
+    });
+  });
+
 });

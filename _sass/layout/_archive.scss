@@ -12,6 +12,7 @@
   @include breakpoint($large) {
     @include span(10 of 12 last);
     @include prefix(0.5 of 12);
+    padding-right: 2em;
   }
 
   a {
@@ -91,15 +92,15 @@
 
 .list__item {
   @include breakpoint($medium) {
-    padding-right: $right-sidebar-width-narrow;
+    padding-right: 0;
   }
 
   @include breakpoint($large) {
-    padding-right: $right-sidebar-width;
+    padding-right: 0;
   }
 
   @include breakpoint($x-large) {
-    padding-right: $right-sidebar-width-wide;
+    padding-right: 0;
   }
 
   .page__meta {
@@ -241,5 +242,208 @@
         width: span(7 of 12);
       }
     }
+  }
+}
+
+/*
+   Publication card (left image, right: title, authors, tldr, links)
+   ========================================================================== */
+
+.publication-card {
+  margin-bottom: 2em;
+  border-bottom: none;
+  padding-bottom: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.publication-card__inner {
+  display: block;
+  padding: 1rem 0;
+
+  @include breakpoint($medium) {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+}
+
+.publication-card__teaser-wrap {
+  flex-shrink: 0;
+  margin-bottom: 1em;
+
+  @include breakpoint($medium) {
+    width: 280px;
+    min-width: 280px;
+    margin-bottom: 0;
+  }
+}
+
+.publication-card__teaser {
+  position: relative;
+  border-radius: $border-radius;
+  overflow: visible;
+  background: var(--global-bg-color);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @include breakpoint($medium) {
+    img {
+      max-height: 200px;
+      object-fit: cover;
+    }
+  }
+}
+
+.publication-card__teaser--placeholder {
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--global-border-color);
+  border-radius: $border-radius;
+  overflow: visible;
+
+  @include breakpoint($medium) {
+    min-height: 200px;
+  }
+}
+
+.publication-card__placeholder-text {
+  font-size: $type-size-4;
+  color: var(--global-text-color-light);
+  font-weight: bold;
+}
+
+.publication-card__venue-badge {
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  padding: 0.35em 0.6em;
+  font-size: $type-size-7;
+  font-weight: 600;
+  background: #0047ab;
+  color: #fff;
+  border-radius: 2px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-top: 5px solid #002d6d;
+    border-left: 5px solid transparent;
+  }
+}
+
+.publication-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.publication-card__title {
+  margin-top: 0;
+  margin-bottom: 0.35em;
+  font-size: $type-size-4;
+  font-weight: 600;
+  line-height: 1.2;
+
+  a {
+    text-decoration: none;
+    color: #0047ab;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .publication-card__permalink {
+    margin-left: 0.25em;
+    opacity: 0.5;
+    font-size: 0.85em;
+  }
+}
+
+.publication-card__authors {
+  margin: 0 0 0.5em;
+  font-size: 0.93em;
+  color: var(--global-text-color);
+  font-weight: 500;
+}
+
+.publication-card__tldr {
+  margin: 0.5em 0 0.75em;
+  font-size: 0.93em;
+  line-height: 1.5;
+  color: var(--global-text-color);
+}
+
+.publication-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 0.5em;
+}
+
+.publication-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.35em 0.65em;
+  font-size: $type-size-7;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: $border-radius;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  i {
+    font-size: 1em;
+  }
+
+  &--paper {
+    background: #e67e22;
+    color: #fff !important;
+  }
+
+  &--arxiv {
+    background: #b31b1b;
+    color: #fff !important;
+  }
+
+  &--github,
+  &--code {
+    background: #444;
+    color: #fff !important;
+  }
+
+  &--huggingface {
+    background: #ffcc00;
+    color: #000 !important;
+  }
+
+  &--models {
+    background: #8bc34a;
+    color: #fff !important;
+  }
+
+  &--project {
+    background: #3498db;
+    color: #fff !important;
   }
 }

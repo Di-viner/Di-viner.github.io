@@ -1,0 +1,75 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% assign teaser = post.header.teaser %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="list__item publication-card">
+  <article class="archive__item publication-card__inner" itemscope itemtype="http://schema.org/CreativeWork">
+    <div class="publication-card__teaser-wrap">
+      {% if teaser %}
+      <div class="publication-card__teaser">
+        <img src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}" alt="">
+        {% if post.venue %}
+        <span class="publication-card__venue-badge">{{ post.venue }}</span>
+        {% endif %}
+      </div>
+      {% else %}
+      <div class="publication-card__teaser publication-card__teaser--placeholder">
+        <span class="publication-card__placeholder-text">{{ post.date | date: "%Y" }}</span>
+        {% if post.venue %}
+        <span class="publication-card__venue-badge">{{ post.venue }}</span>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="publication-card__body">
+      <h2 class="archive__item-title publication-card__title" itemprop="headline">
+        {% if post.link %}
+          <a href="{{ post.link }}" target="_blank" rel="noopener">{{ title }}</a>
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink" class="publication-card__permalink" title="Permalink"><i class="fa fa-link" aria-hidden="true"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+        {% endif %}
+      </h2>
+      {% if post.authors %}
+      {% assign highlighted_authors = post.authors | replace: 'Siye Wu', '<strong>Siye Wu</strong>' %}
+      <p class="publication-card__authors">{{ highlighted_authors }}</p>
+      {% endif %}
+      {% if post.excerpt and post.excerpt != '' %}
+      <p class="archive__item-excerpt publication-card__tldr" itemprop="description"><strong>TL;DR:</strong> {{ post.excerpt | markdownify | strip_html | strip_newlines }}</p>
+      {% endif %}
+      <div class="publication-card__links">
+        {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" class="publication-card__link publication-card__link--paper" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> Paper</a>
+        {% endif %}
+        {% if post.arxiv %}
+        <a href="{{ post.arxiv }}" class="publication-card__link publication-card__link--arxiv" target="_blank" rel="noopener"><i class="ai ai-arxiv ai-fw" aria-hidden="true"></i> arXiv</a>
+        {% endif %}
+        {% if post.link and post.paperurl != post.link %}
+        <a href="{{ post.link }}" class="publication-card__link publication-card__link--project" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Project</a>
+        {% endif %}
+        {% if post.github %}
+        <a href="{{ post.github }}" class="publication-card__link publication-card__link--github" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+        {% endif %}
+        {% if post.code %}
+        <a href="{{ post.code }}" class="publication-card__link publication-card__link--code" target="_blank" rel="noopener"><i class="fas fa-code" aria-hidden="true"></i> Code</a>
+        {% endif %}
+        {% if post.huggingface %}
+        <a href="{{ post.huggingface }}" class="publication-card__link publication-card__link--huggingface" target="_blank" rel="noopener"><i class="fas fa-smile" aria-hidden="true"></i> HuggingFace</a>
+        {% endif %}
+        {% if post.models %}
+        <a href="{{ post.models }}" class="publication-card__link publication-card__link--models" target="_blank" rel="noopener"><i class="fas fa-cube" aria-hidden="true"></i> Models</a>
+        {% endif %}
+      </div>
+    </div>
+  </article>
+</div>
