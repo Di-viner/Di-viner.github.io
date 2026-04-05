@@ -65,7 +65,7 @@
     <ul class="cv-compact-list">
       {% for education in cv.education %}
       <li class="cv-compact-item" style="display: flex; align-items: center; flex-wrap: wrap; gap: 0.4em;">
-          <span>{% if education.startDate %}{{ education.startDate }}{% endif %}{% if education.startDate and education.endDate %} - {% endif %}{{ education.endDate }}</span>
+          <em>{% if education.startDate %}{{ education.startDate }}{% endif %}{% if education.startDate and education.endDate %} - {% endif %}{{ education.endDate }}</em>
           <span style="color: #999;">|</span>
           {% if education.logo %}
           <img src="{{ base_path }}/{{ education.logo }}" alt="{{ education.institution }} logo" style="height: 1.5em; width: auto; object-fit: contain; vertical-align: middle;">
@@ -95,7 +95,7 @@
     <ul class="cv-compact-list">
       {% for work in cv.work %}
       <li class="cv-compact-item" style="display: flex; align-items: center; flex-wrap: wrap; gap: 0.4em;">
-          <span>{% if work.startDate %}{{ work.startDate }}{% endif %}{% if work.startDate and work.endDate %} - {% endif %}{{ work.endDate }}</span>
+          <em>{% if work.startDate %}{{ work.startDate }}{% endif %}{% if work.startDate and work.endDate %} - {% endif %}{{ work.endDate }}</em>
           <span style="color: #999;">|</span>
           {% if work.logo %}
           <img src="{{ base_path }}/{{ work.logo }}" alt="{{ work.company }} logo" style="height: 1.5em; width: auto; object-fit: contain; vertical-align: middle;">
