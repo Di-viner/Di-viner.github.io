@@ -376,6 +376,15 @@
   }
 }
 
+/* Dark mode: hard-coded #0047ab is illegible on gray background */
+html[data-theme="dark"] .publication-card__title a {
+  color: var(--global-link-color);
+
+  &:hover {
+    color: var(--global-link-color-hover);
+  }
+}
+
 .publication-card__authors {
   margin: 0 0 0.5em;
   font-size: 0.93em;

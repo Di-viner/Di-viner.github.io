@@ -73,12 +73,15 @@
           <span>
             {{ education.area }},
             {% if education.website %}
-              <a href="{{ education.website }}" target="_blank" rel="noopener">{{ education.institution }}</a>
+              <a href="{{ education.website }}" target="_blank" rel="noopener"><strong>{{ education.institution }}</strong></a>
             {% else %}
-              {{ education.institution }}
+              <strong>{{ education.institution }}</strong>
             {% endif %}
             {% if education.location %}, {{ education.location }}{% endif %}
           </span>
+          {% if education.gpa %}
+          <span style="margin-left: auto; white-space: nowrap; flex-shrink: 0;"><strong>GPA: {{ education.gpa }}</strong></span>
+          {% endif %}
       </li>
       {% endfor %}
     </ul>
@@ -97,7 +100,7 @@
           {% if work.logo %}
           <img src="{{ base_path }}/{{ work.logo }}" alt="{{ work.company }} logo" style="height: 1.5em; width: auto; object-fit: contain; vertical-align: middle;">
           {% endif %}
-          <span>{{ work.position }}, {% if work.website %}<a href="{{ work.website }}" target="_blank" rel="noopener">{{ work.company }}</a>{% else %}{{ work.company }}{% endif %}{% if work.summary %}, {{ work.summary }}{% endif %}</span>
+          <span>{{ work.position }}, {% if work.website %}<a href="{{ work.website }}" target="_blank" rel="noopener"><strong>{{ work.company }}</strong></a>{% else %}<strong>{{ work.company }}</strong>{% endif %}{% if work.summary %}, {{ work.summary }}{% endif %}</span>
       </li>
       {% endfor %}
     </ul>
