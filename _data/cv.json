@@ -78,7 +78,7 @@
     {
       "name": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
       "authors": "Siye Wu, Kai Yang, Yuchen Cai, Xin Xu, Peng-Yuan Wang, Jiaxuan Wang, Jiashun Liu, Jiafei Lyu, Yangkun Chen, Saiyong Yang, Yanghua Xiao.",
-      "publisher": "arXiv preprint",
+      "publisher": "arXiv preprint 2026",
       "releaseDate": "",
       "website": "https://arxiv.org/abs/2608.27409",
       "github": "https://github.com/Di-viner/LLM-Fusion",
@@ -88,7 +88,7 @@
     {
       "name": "CODA: Difficulty-Aware Compute Allocation for Adaptive Reasoning",
       "authors": "Siye Wu, Jian Xie, Yikai Zhang, Yanghua Xiao.",
-      "publisher": "arXiv preprint",
+      "publisher": "arXiv preprint 2026",
       "releaseDate": "",
       "website": "https://arxiv.org/abs/2603.08659",
       "github": "https://github.com/Di-viner/coda",
@@ -99,7 +99,7 @@
     {
       "name": "Step 3.5 Flash: Open Frontier-Level Intelligence with 11B Active Parameters",
       "authors": "StepFun Team (217 authors including Siye Wu).",
-      "publisher": "Technical Report",
+      "publisher": "Technical Report 2026",
       "releaseDate": "",
       "website": "https://arxiv.org/abs/2602.10604",
       "github": "https://github.com/stepfun-ai/Step-3.5-Flash",
