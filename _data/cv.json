@@ -25,7 +25,7 @@
       }
     ]
   },
-  "about": "Siye Wu (伍思烨) is a third-year M.S. student in Computer Science at Fudan University, advised by [Prof. Yanghua Xiao](https://scholar.google.com/citations?user=odFW4FoAAAAJ&hl=en&oi=ao).\n\nHis research interests lie in natural language processing (NLP) and large language models (LLMs), with a focus on:\n\n- **Efficient LLMs** — Designing compute- and budget-aware LLMs that emphasize adaptive inference, reasoning efficiency, and performance–cost trade-offs across tasks of varying complexity.\n- **LLM Post-training and Reasoning** — Developing post-training methods, including SFT, RL, and OPD, to improve LLM reasoning and consolidate domain skills into unified models.",
+  "about": "Siye Wu (伍思烨) is a third-year M.S. student in Computer Science at Fudan University, advised by [Prof. Yanghua Xiao](https://scholar.google.com/citations?user=odFW4FoAAAAJ&hl=en&oi=ao).\n\nHis research interests lie in natural language processing (NLP) and large language models (LLMs), with a focus on:\n\n- **Efficient LLMs**: Designing compute- and budget-aware LLMs that emphasize adaptive inference, reasoning efficiency, and performance–cost trade-offs across tasks of varying complexity.\n- **LLM Post-training and Reasoning**: Developing post-training methods, including SFT, RL, and OPD, to improve LLM reasoning and consolidate domain skills into unified models.",
   "work": [
     {
       "company": "Tencent Hunyuan",
