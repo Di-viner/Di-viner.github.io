@@ -41,7 +41,7 @@
         {% endif %}
       </h2>
       {% if post.authors %}
-      {% assign highlighted_authors = post.authors | replace: 'Siye Wu', '<strong>Siye Wu</strong>' %}
+      {% assign highlighted_authors = post.authors | replace: 'Siye Wu', '<strong><u>Siye Wu</u></strong>' %}
       <p class="publication-card__authors">{{ highlighted_authors }}</p>
       {% endif %}
       {% if post.excerpt and post.excerpt != '' %}
