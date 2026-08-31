@@ -3,7 +3,6 @@
     "name": "Siye Wu",
     "label": "伍思烨",
     "email": "siyewu24@m.fudan.edu.cn",
-    "phone": "188-1353-0303",
     "website": "https://di-viner.github.io",
     "summary": "",
     "location": {
@@ -22,7 +21,7 @@
       {
         "network": "Google Scholar",
         "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "url": "https://scholar.google.com/citations?user=0l2j2ygAAAAJ&hl=en"
       }
     ]
   },
@@ -77,6 +76,16 @@
   ],
   "publications": [
     {
+      "name": "Consolidating RLVR Capabilities Across Domains: A Deep Dive into Fusion Paradigms",
+      "authors": "Siye Wu, Kai Yang, Yuchen Cai, Xin Xu, Peng-Yuan Wang, Jiaxuan Wang, Jiashun Liu, Jiafei Lyu, Yangkun Chen, Saiyong Yang, Yanghua Xiao.",
+      "publisher": "arXiv preprint",
+      "releaseDate": "",
+      "website": "https://arxiv.org/abs/2608.27409",
+      "github": "https://github.com/Di-viner/LLM-Fusion",
+      "summary": "",
+      "teaser": "images/LLM_Fusion.jpg"
+    },
+    {
       "name": "CODA: Difficulty-Aware Compute Allocation for Adaptive Reasoning",
       "authors": "Siye Wu, Jian Xie, Yikai Zhang, Yanghua Xiao.",
       "publisher": "arXiv preprint",
@@ -90,7 +99,7 @@
     {
       "name": "Step 3.5 Flash: Open Frontier-Level Intelligence with 11B Active Parameters",
       "authors": "StepFun Team (217 authors including Siye Wu).",
-      "publisher": "arXiv preprint",
+      "publisher": "Technical Report",
       "releaseDate": "",
       "website": "https://arxiv.org/abs/2602.10604",
       "github": "https://github.com/stepfun-ai/Step-3.5-Flash",
